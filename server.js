@@ -1,13 +1,17 @@
 
 const express=require("express");
 const app=express();
+const dotenv=require("dotenv").config();
 
-app.get("/api/",(req,res)=>{
-    res.send("server is running now");
-})
+const port= process.env.PORT ||4000;
 
-const PORT=4000;
+app.use("/api/contacts", require("./routes/contactRoutes"))
 
-app.listen(PORT,()=>{
-    console.log(`server is running on ${PORT}`)
+app.get("/haii",(req,res)=>{
+    res.status(200).send({message:"haii"})
+});
+
+
+app.listen(port,()=>{
+    console.log(`server is running on ${port}`)
 });
