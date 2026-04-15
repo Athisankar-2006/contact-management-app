@@ -1,6 +1,7 @@
 
 const express=require("express");
 const app=express();
+const errorHandler=require("./middleware/errorhandler")
 const dotenv=require("dotenv").config();
 
 const port= process.env.PORT ||4000;
@@ -8,6 +9,7 @@ const port= process.env.PORT ||4000;
 app.use(express.json());
 
 app.use("/api/contacts", require("./routes/contactRoutes"))
+app.use(errorHandler);
 
 app.get("/haii",(req,res)=>{
     res.status(200).send({message:"haii"})
