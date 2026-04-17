@@ -1,7 +1,7 @@
 
 const express=require("express");
 const app=express();
-const errorHandler=require("./middleware/errorhandler")
+const errorHandler=require("./middleware/errorHandler")
 const dotenv=require("dotenv").config();
 
 const port= process.env.PORT ||4000;

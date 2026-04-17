@@ -1,8 +1,9 @@
 
 
 const {constants}=require("../constant")
+
 const errorHandler=(err,req,res,next)=>{
-const statuscode=res.statuscode ? res.statuscode:500;
+const statuscode=res.statusCode ? res.statusCode:500;
 
 switch (statuscode) {
     case constants.VALIDATION_ERROR:
@@ -50,4 +51,4 @@ switch (statuscode) {
 }
 
 
-module.exports={errorHandler}
+module.exports= errorHandler;
